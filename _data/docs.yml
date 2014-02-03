@@ -1,0 +1,18 @@
+- title: Getting Started
+  pages:
+    - introduction
+    - installation
+
+- title: Storage
+  pages:
+    - local-storage
+    - remote-storage
+
+- title: Data Store
+  pages:
+    - sqlite-data-store
+    - mysql-data-store
+
+- title: Develop
+  pages:
+    - contributing

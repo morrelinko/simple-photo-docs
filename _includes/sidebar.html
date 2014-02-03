@@ -1,0 +1,17 @@
+{% for doc in site.data.docs %}
+    <h3>
+        {{ doc.title }}
+    </h3>
+    <ul class="nav sidebar-nav">
+        {% for item in doc.pages %}
+            {% assign page_url = item | prepend: '/docs/' | append: '/' %}
+            <li>
+            {% for site_page in site.pages %}
+                {% if site_page.url == page_url %}
+                    <a href="{{ page_url }}">{{ site_page.title }}</a>
+                {% endif %}
+            {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endfor %}

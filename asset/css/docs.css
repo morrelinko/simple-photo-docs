@@ -1,0 +1,47 @@
+body {
+    padding-top: 0;
+}
+
+#sidebar {
+    background-color: #2B3D50;
+    display: none;
+}
+
+ul.sidebar-nav {
+    margin-left: -20px;
+    margin-right: -21px;
+    margin-bottom: 20px;
+}
+
+ul.sidebar-nav > li > a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+ul.sidebar-nav > li > a:hover {
+    background: #22303F;
+}
+
+@media (min-width: 768px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        display: block;
+        padding: 70px 20px 20px;
+        border-right: 1px solid #EEEEEE;
+    }
+}
+
+#content {
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    #content {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}

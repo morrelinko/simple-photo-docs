@@ -1,3 +1,8 @@
-name: Simple Photo Docs
+name: Simple Photo
 markdown: redcarpet
 pygments: true
+description:
+url: http://simplephoto.morrelinko.com
+baseUrl: /
+permalink: pretty
+exclude: [README.md]

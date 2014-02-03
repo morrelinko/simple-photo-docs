@@ -2,6 +2,23 @@ body {
     padding-top: 0;
 }
 
+code {
+    background-color: #FCFCFC;
+    border-radius: 6px 6px 6px 6px;
+    color: #595F7B;
+    font-size: 80%;
+    padding: 6px 12px
+}
+
+p code {
+    word-wrap: break-word;
+    white-space: pre-line
+}
+
+pre {
+    font-size: 17px
+}
+
 #sidebar {
     background-color: #2B3D50;
     display: none;

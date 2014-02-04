@@ -15,9 +15,8 @@ $localStorage = new LocalStorage($projectRootPath, $photoPath);
 
 ```
 
-- $projectPath: Your application root path. Basically the directory that contains your public index.php file.
-
-- $photoPath: Directory where photo will be saved. This is relative to your
+- `$projectPath`: Your application root path. Basically the directory that contains your public index.php file.
+- `$photoPath`: Directory where photo will be saved. This is relative to your
 
 
 Example:

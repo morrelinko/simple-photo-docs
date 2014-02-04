@@ -15,14 +15,14 @@ $localStorage = new LocalStorage($photoPath, $host, array $options);
 
 ```
 
-- $photoPath: Directory where photo will be saved on the domain.
-- $host: Your FTP Host name (The Remote Host storage uses ftp protocol internally)
-- $options: Available Options
-    - root: Ftp Root path eg '/'
-    - url: The domain name eg 'http://static.img-ex.com
-    - username: Ftp username (Optional, Defaults to anonymous if not specified)
-    - password: Ftp password (Optional, defaults to '' if not specified)
-    - port: Ftp Port (defaults to 21 if not specified)
+- `$photoPath`: Directory where photo will be saved on the domain.
+- `$host`: Your FTP Host name (The Remote Host storage uses ftp protocol internally)
+- `$options`: Available Options
+    - `'root'`: Ftp Root path eg '/'
+    - `'url'`: The domain name eg 'http://static.img-ex.com
+    - `'username'`: Ftp username (Optional, Defaults to anonymous if not specified)
+    - `'password'`: Ftp password (Optional, defaults to '' if not specified)
+    - `'port'`: Ftp Port (defaults to 21 if not specified)
 
 Example:
 

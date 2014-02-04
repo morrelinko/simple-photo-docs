@@ -5,13 +5,24 @@
 
 - title: Storage
   pages:
+    - storage-introduction
     - local-storage
     - remote-storage
+    - implementing-storage
 
 - title: Data Store
   pages:
+    - data-store-introduction
     - sqlite-data-store
     - mysql-data-store
+    - implementing-data-store
+
+- title: Input Source
+  pages:
+    - input-source-introduction
+    - file-path-source
+    - file-upload-source
+    - implementing-source
 
 - title: Develop
   pages:

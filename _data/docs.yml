@@ -22,6 +22,7 @@
     - input-source-introduction
     - file-path-source
     - file-upload-source
+    - url-source
     - implementing-source
 
 - title: Develop

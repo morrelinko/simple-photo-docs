@@ -1,7 +1,7 @@
 {% for doc in site.data.docs %}
-    <h3>
+    <h4>
         {{ doc.title }}
-    </h3>
+    </h4>
     <ul class="nav sidebar-nav">
         {% for item in doc.pages %}
             {% assign page_url = item | prepend: '/docs/' | append: '/' %}

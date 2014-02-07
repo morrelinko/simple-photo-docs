@@ -18,7 +18,7 @@ $dataStore = new MysqlDataStore([
 Or by passing an instance of a PDO connection
 
 ```php
-use SimplePhoto\DataStore\SqliteDataStore;
+use SimplePhoto\DataStore\MysqlDataStore;
 
 $pdo = new \PDO(
     'mysql:host=127.0.0.1;dbname=sample_app',

@@ -32,6 +32,7 @@ library for image transformation
 use SimplePhoto\Store\DataStore;
 use SimplePhoto\Storage\LocalStorage;
 use SimplePhoto\SimplePhoto;
+use SimplePhoto\StorageManager;
 
 // Setup data store (photo details will be saved here)
 $dataStore = new SqliteDataStore(['database' => 'path/to/sample_app.db']);

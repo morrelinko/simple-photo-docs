@@ -8,10 +8,10 @@ Implementation of photo source allowing uploads from file paths
 ```php
 use SimplePhoto\Source\FilePathSource;
 
-$simplePhoto->upload('/path/to/file.png', new FilePathSource(), []);
+$simplePhoto->upload(new FilePathSource('/path/to/file.png'), []);
 ```
 
-An alias in already exists for this in the SimplePhoto class
+`SimplePhoto` class provides an upload alias for this source
 
 ```php
 $simplePhoto->uploadFromFilePath('/path/to/file.png', []);

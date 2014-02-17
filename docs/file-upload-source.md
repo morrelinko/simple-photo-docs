@@ -8,10 +8,10 @@ Implementation of photo source allowing uploads from PHP File Uploads
 ```php
 use SimplePhoto\Source\PhpFileUploadSource;
 
-$simplePhoto->upload($_FILES['image'], new PhpFileUploadSource(), []);
+$simplePhoto->upload(new PhpFileUploadSource($_FILES['image']), []);
 ```
 
-An alias in already exists for this in the SimplePhoto class
+SimplePhoto class provides an alias for this source
 
 ```php
 use SimplePhoto\SimplePhoto;

@@ -5,10 +5,16 @@
     <ul class="nav sidebar-nav">
         {% for item in doc.pages %}
             {% assign page_url = item | prepend: '/docs/' | append: '/' %}
+
+            {% if page_url == page.url %}
+                {% assign c = 'active' %}
+            {% else %}
+                {% assign c = '' %}
+            {% endif %}
             <li>
             {% for site_page in site.pages %}
                 {% if site_page.url == page_url %}
-                    <a href="{{ page_url }}">{{ site_page.title }}</a>
+                    <a href="{{ page_url }}" class="{{ c }}">{{ site_page.title }}</a>
                 {% endif %}
             {% endfor %}
             </li>

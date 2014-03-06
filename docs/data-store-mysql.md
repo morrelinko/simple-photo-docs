@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: docs
 title: Mysql Data Store
 ---
 
 ```php
+<?php
 use SimplePhoto\DataStore\MysqlDataStore;
 
 $dataStore = new MysqlDataStore([
@@ -18,6 +19,7 @@ $dataStore = new MysqlDataStore([
 Or by passing an instance of a PDO connection
 
 ```php
+<?php
 use SimplePhoto\DataStore\MysqlDataStore;
 
 $pdo = new \PDO(

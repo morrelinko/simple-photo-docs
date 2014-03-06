@@ -6,25 +6,26 @@
 - title: Storage
   pages:
     - storage-introduction
-    - local-storage
-    - remote-storage
-    - implementing-storage
+    - storage-local
+    - storage-remote
+    - storage-implementation
 
 - title: Data Store
   pages:
     - data-store-introduction
-    - sqlite-data-store
-    - mysql-data-store
-    - implementing-data-store
+    - data-store-sqlite
+    - data-store-mysql
+    - data-store-implementation
 
 - title: Input Source
   pages:
-    - input-source-introduction
-    - file-path-source
-    - file-upload-source
-    - url-source
-    - implementing-source
+    - source-introduction
+    - source-file-path
+    - source-file-upload
+    - source-url
+    - source-implementing
 
 - title: Develop
   pages:
     - contributing
+    - donate

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Introduction
 ---
 
@@ -8,6 +8,7 @@ Data stores defines an api for persisting uploaded photo details
 All data stores implements the interface `DataStoreInterface`
 
 ```php
+<?php
 interface DataStoreInterface
 {
     public function getConnection();
@@ -18,13 +19,7 @@ interface DataStoreInterface
 }
 ```
 
-All data stores uses a consistent way for setup
+Supported Data Stores
 
-```php
-new SampleDataStore($connection, array $options);
-```
-
-- `$connection`: connection parameters
-- `$options`: configuration options
-        - `'photo_table'`: set the photo table name
-
+* [SQLite](/docs/data-store-sqlite)
+* [MySQL](/docs/data-store-mysql)

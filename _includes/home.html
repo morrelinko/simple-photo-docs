@@ -1,0 +1,63 @@
+{*
+<div class="row">
+            <div class="col-md-6">
+                <h3 class="text-center">Upload</h3>
+{% highlight php %}<?php
+$photoId = $simplePhoto->upload(
+    new UrlSource('http://example.com/file.png')
+);
+{% endhighlight %}
+
+                <h3 class="text-center">Upload From Different Sources</h3>
+{% highlight php %}<?php
+// From uploaded file
+$photoId = $simplePhoto->upload(
+    new PhpFileUploadSource($_FILES['image'])
+);
+
+// From file path
+$photoId = $simplePhoto->upload(
+    new FilePathSource('/path/to/file.png')
+);
+{% endhighlight %}
+
+                <h3 class="text-center">Upload + Transform</h3>
+{% highlight php %}<?php
+$photoId = $simplePhoto->upload(
+    new UrlSource('http://example.com/file.png'),
+    ['transform' => ['size' => [200, 200]]]
+);
+{% endhighlight %}
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="text-center">Get Photo</h3>
+{% highlight php %}<?php
+$photo = $simplePhoto->get($photoId);
+
+echo $photo->url();
+{% endhighlight %}
+
+                <h3 class="text-center">Get Photo + Transform</h3>
+{% highlight php %}<?php
+$photo = $simplePhoto->get($photoId, [
+    'transform' => ['size' => [200, 200]]
+]);
+
+echo $photo->url();
+{% endhighlight %}
+
+                <h3 class="text-center">Photo Collection</h3>
+{% highlight php %}<?php
+$photos = $simplePhoto->collection([1, 2, 4, 7], [
+    'transform' => ['size' => [200, 200]]
+]);
+
+$photo = $photos->get(0); // Gets photo with #id -> 1
+echo $photo->url();
+{% endhighlight %}
+
+            </div>
+        </div>
+
+*}

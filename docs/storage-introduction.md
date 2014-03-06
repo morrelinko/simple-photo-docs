@@ -1,4 +1,4 @@
 ---
 layout: docs
-title: Contributing
+title: Introduction
 ---

@@ -1,25 +1,26 @@
 ---
-layout: default
+layout: docs
 title: Remote Storage
 ---
 
-This allows for saving photos in a different domain.
+Save photos to a remote host.
 
-#### Adding Remote host storage: Syntax
+
+#### Creating remote storage
 
 ```php
+<?php
+use SimplePhoto\Storage\RemoteHostStorage;
 
-use SimplePhoto\Storage\LocalStorage;
-
-$localStorage = new LocalStorage($photoPath, $host, array $options);
+$remoteStorage = new RemoteHostStorage(array $options);
 
 ```
 
-- `$photoPath`: Directory where photo will be saved on the domain.
-- `$host`: Your FTP Host name (The Remote Host storage uses ftp protocol internally)
 - `$options`: Available Options
+    - `'host'`: Your FTP Host name (The Remote Host storage uses ftp protocol internally) (required)
     - `'root'`: Ftp Root path eg '/'
-    - `'url'`: The domain name eg 'http://static.img-ex.com
+    - `'path'`: Directory where photo will be saved on the domain. (required)
+    - `'url'`: The domain name eg 'http://static.img-ex.com (required)
     - `'username'`: Ftp username (Optional, Defaults to anonymous if not specified)
     - `'password'`: Ftp password (Optional, defaults to '' if not specified)
     - `'port'`: Ftp Port (defaults to 21 if not specified)
@@ -27,13 +28,15 @@ $localStorage = new LocalStorage($photoPath, $host, array $options);
 Example:
 
 ```php
-
+<?php
 use SimplePhoto\Storage\RemoteHostStorage;
 use SimplePhoto\StorageManager;
 use SimplePhoto\SimplePhoto;
 
-$remoteHostStorage = new RemoteHostStorage('/files/photos/', '127.0.0.1', [
+$remoteHostStorage = new RemoteHostStorage(, [
+    'host' => '127.0.0.1',
     'root' => '/',
+    'path' => '/files/photos/',
     'url' => 'http://static.img-ex.com',
     'username' => 'joeftpd',
     'password' => 'pa$$word',

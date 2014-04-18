@@ -11,6 +11,7 @@
     - storage-local
     - storage-remote
     - storage-implementation
+    - storage-awss3
 
 - title: Data Store
   pages:

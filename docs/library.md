@@ -29,7 +29,7 @@ The first storage added to the storage manager is used by default.
 
 If you added more than one storage locations to your storage manager,
 
-you can use the `'storage'` option to explicitly define the storage location to save the
+you can use the `'storage_name'` option to explicitly define the storage location to save the
 
 photo. This value takes the name that was used when adding the storage.
 
@@ -39,7 +39,7 @@ $storageManager = new StorageManager();
 $storageManager->add('other_storage', new RemoteHostStorage(...)):
 
 $simplePhoto->upload(new PhpFileUploadSource($_FILES['image']), [
-    'storage' => 'other_storage'
+    'storage_name' => 'other_storage'
 ]);
 ```
 
@@ -47,12 +47,16 @@ $simplePhoto->upload(new PhpFileUploadSource($_FILES['image']), [
 
 You can perform some image transformation during upload using the `'transform'` option
 
+```php
+<?php
+
 $simplePhoto->upload(new PhpFileUploadSource($_FILES['image']), [
     'transform' => [
-        'size' => [150, 150],
-        'rotate' => 180
+        'resize' => [150, 150],
+        'rotate' => [180]
     ]
 ]);
+```
 
 ## Working with Photos
 
@@ -103,6 +107,10 @@ An example use case showing how useful this can be..
 <img src="<?php echo $simplePhoto->get($photoId, ['transform' => ['size' => ['150', '150']]])->url(); ?>" />
 ```
 
+Transformation is performed on the fly and photo is cached permanently so subsequent requests won't
+
+perform photo transformation.
+
 ## Photo Collection
 
 When you perform a `get($photoId)` simple photo looks up a data store
@@ -147,9 +155,7 @@ $photo = $photos->get(2); // Gets photo with #ID 34
 
 ## Push
 
-Hey! We are not in the labour room (o_o )!
-
-This is a feature in Simple Photo that allows you to push photo result or detials about a photo
+This is a feature in Simple Photo that allows you to push photo result or details about a photo
 
 into an already existing array or array of items.
 
@@ -259,7 +265,7 @@ $users = [
 ];
 
 // NOTE: the & (reference) symbol. This is required to that the item in the original photo is updated
-$simplePhoto->push($users, ['profile_id'], function(&$item, PhotoResult $photo, $index, $name) {
+$simplePhoto->push($users, ['profile_id'], function(&$item, PhotoResult $photo, $name, $index) {
     $item['profile_pic_url'] = $photo->url();
 });
 
@@ -299,7 +305,7 @@ $users = [
 $simplePhoto->push(
     $users,
     ['profile_id', 'cover_photo_id'],
-    function(&$item, PhotoResult $photo, $index, $name) {
+    function(&$item, PhotoResult $photo, $name, $index) {
         if ($index == 'profile_id') {
             // Check if `push()` is building photos for 'profile_id' column
             $item['profile_pic_url'] = $photo->url();
